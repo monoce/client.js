@@ -1,0 +1,41 @@
+{
+  "name": "monoce",
+  "version": "0.0.0",
+  "description": "Monoce - modern, fast, simple KV storage.",
+  "author": {
+    "name": "Danil Shaymurzin",
+    "email": "d.shaymurzin@monoce.com",
+    "url": "https://www.monoce.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monoce/client.js"
+  },
+  "keywords": [
+    "monoce",
+    "storage",
+    "database",
+    "kv",
+    "key value"
+  ],
+  "files": [
+    "dist",
+    "index.js",
+    "index.d.ts"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "publish:next": "npm publish --access public --tag next"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "typescript": "^4.1.1-rc"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
