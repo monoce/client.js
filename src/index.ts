@@ -18,7 +18,7 @@ export class MonoceInstance {
 
   private async queryDocumentMethod({ document }: GetDeleteQueryParams, url: '/get' | '/delete'): Promise<JsonObject | null> {
     const { data } = await this.#instance.request({ url, data: { ...this.#instance.defaults.data, document } })
-    return data
+    return data || {}
   }
 
   async get(params: GetDeleteQueryParams): Promise<JsonObject | null> {
@@ -31,7 +31,7 @@ export class MonoceInstance {
 
   private async mutationDocumentMethod(setParams: SetUpdateQueryParams, url: '/set' | '/update'): Promise<JsonObject | null> {
     const { data } = await this.#instance.request({ url, data: { ...this.#instance.defaults.data, ...setParams } }) 
-    return data
+    return data || {}
   }
 
   async set(params: SetUpdateQueryParams): Promise<JsonObject | null> {
